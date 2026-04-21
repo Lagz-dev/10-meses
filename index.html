@@ -1153,7 +1153,12 @@
         <p class="counter-tagline" data-aos="fade-up" data-aos-delay="200">
             "Cada segundo ao seu lado vale a pena." 💖
         </p>
+
+        <a href="./contador.html" class="btn-surpresa" style="text-decoration: none; margin-top:40px; display:inline-block;">
+            ⏳ Ver contador completo
+        </a>
     </section>
+
 
     <!-- ======================================================
        6. CARTA
@@ -1262,7 +1267,7 @@
             </p>
 
             <a href="./vídeopage.html" class="modal-surpresa-btn">
-                🎬 Ver surpresa final
+                🎬 Ver minha surpresinha
             </a>
         </div>
 
@@ -1271,7 +1276,7 @@
 
     <script>
         /* ========================================================
-           INICIALIZA AOS (Animate On Scroll)
+           INICIALIZAÇÃO DO AOS (animações ao scrollar)
         ======================================================== */
         AOS.init({
             duration: 800,
@@ -1337,7 +1342,7 @@
             /* spawn inicial */
             for (let i = 0; i < 55; i++) {
                 const p = new Particle();
-                p.y = Math.random() * H; /* distribuídas na tela no início */
+                p.y = Math.random() * H;
                 particles.push(p);
             }
 
@@ -1351,12 +1356,10 @@
         })();
 
         /* ========================================================
-           CONTADOR DE AMOR
-           ⚠️ Altere a data abaixo para o início do namoro
+           CONTADORZINHO Q CONTA SOZINHO 
         ======================================================== */
         (function () {
             // Data de início do relacionamento — formato: AAAA, MM-1, DD
-            // Exemplo: 14 de junho de 2024 → new Date(2024, 5, 14)
             const startDate = new Date(2025, 5, 25);
 
             function update() {
@@ -1375,36 +1378,12 @@
             }
 
             update();
-            setInterval(update, 60000); // atualiza a cada minuto
+            setInterval(update, 60000); // atualiza a cada minutinhoss
         })();
 
-        /* ========================================================
-           MODAL DA SURPRESA
-        ======================================================== */
-        const modal = document.getElementById('modal');
-        const btnSurpresa = document.getElementById('btn-surpresa');
-        const btnClose = document.getElementById('modal-close');
-
-        btnSurpresa.addEventListener('click', () => {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        btnClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
 
         /* ========================================================
-           NAV: destaca link ativo ao scrollar
+           NAV: destaca  os links ao scrollar
         ======================================================== */
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('nav a');
@@ -1424,24 +1403,29 @@
         window.addEventListener('scroll', onScroll, { passive: true });
 
         /* ========================================================
-   SLIDESHOW DE FOTOS DA JOYCE
+            MODAL - ABRIR SURPRESA
+       ======================================================== */
+
+        const btnSurpresa = document.getElementById("btn-surpresa");
+        const modal = document.getElementById("modal");
+
+        btnSurpresa.addEventListener("click", () => {
+            modal.classList.add("active");
+        });
+
+        /* ========================================================
+   SLIDESHOW DE FOTOS DA MINHA PRINCESA
 ======================================================== */
 
         const slides = document.querySelectorAll(".photo-slider img");
         let slideIndex = 0;
 
         function nextSlide() {
+            slides.forEach(img => img.classList.remove("active"));
 
-            slides[slideIndex].classList.remove("active");
-
-            slideIndex++;
-
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
+            slideIndex = (slideIndex + 1) % slides.length;
 
             slides[slideIndex].classList.add("active");
-
         }
 
         setInterval(nextSlide, 3500);

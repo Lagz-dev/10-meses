@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarações</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --rose: #f7c5c5;
+            --rose-mid: #f0a0a0;
+            --rose-deep: #d45c7a;
+            --blush: #fde8e8;
+            --cream: #fff7f7;
+            --text-dark: #3a1a22;
+            --text-mid: #7a4455;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #fff0f3, #fde8e8, #ffd6e0, #ffe4ec);
+            background-size: 400% 400%;
+            animation: bg 10s ease infinite;
+            padding: 80px 24px;
+            color: var(--text-dark);
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ===== TÍTULO NO CANTO ===== */
+        h1 {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        h1 span {
+            color: var(--rose-deep);
+            font-style: italic;
+        }
+
+        /* ===== CONTEÚDO ESTILO CARTA ===== */
+        .letter {
+            max-width: 700px;
+            margin: 120px auto 0;
+            line-height: 2;
+            font-size: 1.05rem;
+            color: var(--text-mid);
+        }
+
+        .letter p {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: var(--rose-deep);
+        }
+
+        /* ===== BOTÃO ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--rose-deep), #b03060);
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(212, 92, 122, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ===== DETALHES FLUTUANTES ===== */
+        .heart {
+            position: absolute;
+            font-size: 18px;
+            color: rgba(212, 92, 122, 0.2);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .h1 {
+            top: 15%;
+            padding-left: 50%
+        }
+
+        .h2 {
+            top: 25%;
+            right: 12%;
+        }
+
+        .h3 {
+            bottom: 18%;
+            left: 14%;
+        }
+
+        .h4 {
+            bottom: 12%;
+            right: 10%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Declarações de um<span> programador apaixonado</span></h1>
+
+    <div class="heart h1">❤</div>
+    <div class="heart h2">❤</div>
+    <div class="heart h3">❤</div>
+    <div class="heart h4">❤</div>
+
+    <div class="letter">
+
+        <p>
+            Pse amor, dsclp se eu não sou tão bom com palavras, mas queria tentar colocar em um<code> sitezinho </code>pouco do que eu sinto.
+        </p>
+
+        <p>
+            Foi bem<code> complicadinho </code> pra fazer, mas eu espero que você goste, porque cada linha de código aqui tem um<code> pouquinho </code>do meu<code> coraçãozinho</code>.
+        </p>
+
+        <p>
+            Trabalhei feito uma<code> cadelazinha </code>pra concertar uns bugs que apareceram no meio do<code> caminhozinho</code>. Mas no fim deu tudo certo, assim como a gente sempre dá um<code> jeitinho </code> de superar os obstáculos, né?
+        </p>
+
+        <p>
+            Enquanto estavamos em ligação na segunda, eu estava quebrando a cabeça pra concertar uns problemas que tinham rolado enquanto eu testava o site, me perdoe por nn ter prestado muita atenção noq vc tava falando...
+        </p>
+
+        <p>
+            Eu gosto muito de ti, e queria que esse site fosse uma forma de mostrar um pouco do meu <strong>amorzão</strong> por você. Espero que você sinta todo o carinho e dedicação que eu coloquei.
+        </p>
+
+        <p> Só queria dizer que eu te amo em cada linha de código que eu fiz.</p>
+
+        <p class="highlight">
+            Te amo
+        </p>
+
+        <a class="btn" href="index.html">Voltar 💌</a>
+
+    </div>
+
+</body>
+
+</html>
