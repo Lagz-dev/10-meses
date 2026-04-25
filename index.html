@@ -68,7 +68,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 24px  290px;
+            padding: 100px 24px 290px;
             overflow: hidden;
             z-index: 1;
 
@@ -1184,7 +1184,7 @@
 
         <div class="counter-grid" data-aos="zoom-in">
             <div class="counter-card">
-                <div class="counter-number" id="cnt-meses"><span class="meses-namoro"></span></div>
+                <div class="counter-number" id="cnt-meses">10</div>
                 <div class="counter-label">Meses</div>
             </div>
             <div class="counter-card">
@@ -1273,7 +1273,7 @@
             <img src="./img/foto8.jpeg" class="slide">
             <img src="./img/foto9.jpeg" class="slide">
             <img src="./img/foto10.jpeg" class="slide">
-            <img src="./img/foto.11.jpeg" class="slide">
+            <img src="./img/foto11.jpeg" class="slide">
             <img src="./img/foto12.jpeg" class="slide">
             <img src="./img/foto13.jpeg" class="slide">
             <img src="./img/foto14.jpeg" class="slide">
@@ -1507,6 +1507,42 @@
             atualizarMeses();
 
         })();
+
+
+
+        function atualizarContador() {
+
+            const inicio = new Date(2025, 5, 25); // 25 de maio de 2025
+            const agora = new Date();
+
+            const diff = agora - inicio;
+
+            const minutos = Math.floor(diff / 60000);
+            const horas = Math.floor(diff / 3600000);
+            const dias = Math.floor(diff / 86400000);
+
+            let meses =
+                (agora.getFullYear() - inicio.getFullYear()) * 12 +
+                (agora.getMonth() - inicio.getMonth());
+
+            if (agora.getDate() < inicio.getDate()) {
+                meses--;
+            }
+
+            document.getElementById("cnt-meses").textContent = meses;
+            document.getElementById("cnt-dias").textContent = dias;
+            document.getElementById("cnt-horas").textContent = horas;
+            document.getElementById("cnt-minutos").textContent = minutos;
+
+            document.querySelectorAll(".meses-namoro").forEach(el => {
+                el.textContent = meses;
+            });
+
+        }
+
+        atualizarContador();
+        setInterval(atualizarContador, 60000);
+
     </script>
 </body>
 
